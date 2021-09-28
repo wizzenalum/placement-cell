@@ -1,0 +1,39 @@
+.student-list,.interview-list {
+  border-radius: 5px;
+  border-top: 2px solid rgb(70, 70, 182);
+  padding-top:20px;
+  display: grid;
+  gap:10px;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit,minmax(300px,400px)); 
+  &>div{
+    width: 100%;
+    padding:10px 20px;
+    box-shadow: 0 0 2px 2px rgba(137, 43, 226, 0.541);
+  }
+  table{
+    margin:auto;
+    font-size: .9em;
+  }
+  a{
+    color:black;
+  }
+  .student-name-status,.interview-name{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-bottom: 2px solid salmon;
+  }
+
+  /// solving the multiline text overflow ............
+  .about {
+    padding:0px;
+    // max-height: 6.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin:0 0 20px 20px;
+  }
+
+}

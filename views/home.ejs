@@ -1,0 +1,15 @@
+<script src="/scripts/forms-view.js"></script>
+<div id = second-header>
+    <button id = "student-create-btn" class="btn">create student</button>
+    <button id="interview-create-btn" class="btn">create interview</button>
+    <button id="batch-create-btn" class="btn">create batch</button>
+    <button id="company-create-btn" class="btn">create company</button>
+  </div>
+<div>
+    <%- include("./student-list")%>
+    <%-include("./partials/_student-form") %>
+    <%-include("./partials/_interview-form") %>
+    <%-include("./partials/_batch-form") %>
+    <%-include("./partials/_company-form") %>
+</div>
+

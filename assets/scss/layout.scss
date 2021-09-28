@@ -1,0 +1,95 @@
+// root classes that will i used i defferent tags
+html{
+  width: 100%;
+  height: 100%;
+  margin:0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.795);
+  h1,h2,h3,h4,h5,p{
+    margin:0px;
+    padding: 5px 10px;
+    color: rgba(0, 0, 0, 0.795);
+
+  }
+  a{
+    text-decoration: none;
+    color: rgba(255, 253, 253, 0.795);
+  }
+  body{
+    margin:0px;
+    padding:0px;
+  }
+  & *{
+    box-sizing: inherit;
+  }
+}
+.green{
+  color: rgb(0, 255, 0);
+}
+.red{
+  color: rgb(255, 0, 0);
+}
+.yellow{
+  color: rgb(255, 251, 0);
+}
+a,.btn{
+  padding:3px 5px;
+  border:none;
+  background-color: transparent;
+  box-shadow: 0 0 2px 2px rgba(0, 50, 110, 0.767);
+  &:hover{
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.541);
+  }
+  &:active{
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.541) inset;
+  }
+}
+.btn{
+  background-color: rgb(238, 57, 118);
+}
+
+
+
+// style for header only 
+body>header {
+  background-color: rgb(8, 6, 32);
+  width:100%;
+  height:100px;
+  padding: 10px 20px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+
+  nav, .user{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &>a{
+      margin-right:10px;
+      margin-top:10px;
+      // min-width: 120px;
+      text-align: center;
+    }
+  }
+ 
+}
+
+.flext-apart{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// for interview page.
+#interview{
+
+  header{
+    margin:20px auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+  }
+}

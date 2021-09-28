@@ -1,0 +1,134 @@
+# routes for ******  HOME page ****
+###
+GET http://localhost:8000/ HTTP/1.1
+###
+GET http://localhost:8000/interviews HTTP/1.1
+###
+GET http://localhost:8000/current-job HTTP/1.1
+
+
+
+
+
+
+# ********* ******  CSV DOWNLOADS ***************
+###
+GET http://localhost:8000/csv/all-students HTTP/1.1
+###  NOTICE:update id each time 
+GET http://localhost:8000/csv/interview/55333 HTTP/1.1
+###  NOTICE:update id each time
+GET http://localhost:8000/csv/batch/1234 HTTP/1.1
+
+
+
+
+
+#  ************  STUDENT  **************
+### NOTICE: update the body data
+POST http://localhost:8000/student/create HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=ghanshyam
+&batch=613b73d93f8c51fbdb6932dd
+&college=NIT-UK
+&status=Placed
+&dsa=80
+&web=60
+&react=90
+
+### NOTICE: update the body data and id of url and interview
+POST http://localhost:8000/student/update/6565489 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+status=Placed
+&interview=4464565
+### NOTICE: update the body data
+GET http://localhost:8000/student/delete/566549 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+
+
+
+
+
+
+
+
+### ****************      EMPLOYEE  ********** 
+###
+get http://localhost:8000/employee/signup
+###NOTICE:update data for user
+post http://localhost:8000/employee/create-user
+Content-Type: application/x-www-form-urlencoded
+
+name=ghanshyam
+&email=a@a
+&password=aa
+&confirmPassword=aa
+###
+get http://localhost:8000/employee/signin
+###NOTICE:update login and password
+post http://localhost:8000/employee/create-session
+Content-Type: application/x-www-form-urlencoded
+
+email=a@a
+&password=aa
+###
+get http://localhost:8000/employee/signout
+
+
+
+
+# *********** ********** INTERVIEW  ********
+### 
+GET http://localhost:8000/interview/61507963034b96e5af7db94a HTTP/1.1
+
+### NOTICE:update id each time
+GET http://localhost:8000/interview/assign-student/?studentId=613b74383f8c51fbdb6932e1&interviewId=614c99a5f7dd3f27cce2dc34 HTTP/1.1
+
+### NOTICE:update data inteview creation
+POST http://localhost:8000/interview/create HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+company-id=34564
+&date=27-11-1995
+
+
+
+
+
+# ********** RESULT  ********
+###NOTICE:update id and body data each time
+POST http://localhost:8000/result/update/1212345/ HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+result=PASS
+
+
+
+
+
+### **************** BATCH ****** 
+###NOTICE:update id each time
+GET http://localhost:8000/batch/id/1234 HTTP/1.1
+###NOTICE:update body data
+POST http://localhost:8000/batch/create HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=param
+&limit=60
+
+
+
+
+
+
+#******************** COMPANY  ********
+### NOTICE:update id each time
+GET http://localhost:8000/company/id/1234 HTTP/1.1
+###NOTICE:update body data
+POST http://localhost:8000/company/create HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=amazon
+&about=this sells compony

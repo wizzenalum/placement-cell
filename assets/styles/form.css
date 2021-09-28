@@ -1,0 +1,50 @@
+form {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  padding: 5%;
+  justify-content: center;
+  margin: auto;
+}
+form .label-field {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+form input, form select {
+  border-radius: 5px;
+}
+form input, form textarea {
+  padding: 5px 10px;
+  font-size: 1.1em;
+  color: #424141;
+  width: 100%;
+  border: none;
+  background-color: rgba(245, 222, 179, 0.568);
+}
+form select, form button {
+  padding: 5px 10px;
+  background-color: #18193f;
+  border: none;
+  color: white;
+  font-size: inherit;
+  box-shadow: 0 0 2px 2px rgba(194, 194, 194, 0.534);
+}
+form button:hover {
+  box-shadow: 0 0 2px 2px rgba(216, 99, 206, 0.534);
+}
+form button:active {
+  box-shadow: 0 0 2px 2px rgba(194, 194, 194, 0.534) inset;
+}
+form #close-form, form button {
+  max-width: 100px;
+  justify-self: center;
+}
+
+.overlay-form {
+  position: absolute;
+  top: 100px;
+  display: hidden;
+  background-color: #a55c5c;
+}

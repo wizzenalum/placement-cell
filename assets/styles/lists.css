@@ -1,0 +1,35 @@
+.student-list, .interview-list {
+  border-radius: 5px;
+  border-top: 2px solid #4646b6;
+  padding-top: 20px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+}
+.student-list > div, .interview-list > div {
+  width: 100%;
+  padding: 10px 20px;
+  box-shadow: 0 0 2px 2px rgba(137, 43, 226, 0.541);
+}
+.student-list table, .interview-list table {
+  margin: auto;
+  font-size: 0.9em;
+}
+.student-list a, .interview-list a {
+  color: black;
+}
+.student-list .student-name-status, .student-list .interview-name, .interview-list .student-name-status, .interview-list .interview-name {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 2px solid salmon;
+}
+.student-list .about, .interview-list .about {
+  padding: 0px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 20px 20px;
+}

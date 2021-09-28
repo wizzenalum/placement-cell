@@ -1,0 +1,55 @@
+<script src="/scripts/forms-view.js"></script>
+
+<div id = second-header>
+  <button id = "student-create-btn" class="btn">create student</button>
+  <button id="interview-create-btn" class="btn">create interview</button>
+  <button id="batch-create-btn" class="btn">create batch</button>
+  <button id="company-create-btn" class="btn">create company</button>
+</div>
+
+    <%-include("./partials/_student-form") %>
+    <%-include("./partials/_interview-form") %>
+    <%-include("./partials/_batch-form") %>
+    <%-include("./partials/_company-form") %>
+
+
+
+<link rel="stylesheet" href="/styles/lists.css">
+<div class = "list interview-list">
+  <% if(interviewList){ let currentTime = new Date().getTime(); 
+    for(let interview of interviewList){ 
+      let date = interview.date.toLocaleDateString();
+      let time = interview.date.getTime();
+    %>
+    <div id = <%= interview._id %>>
+      <div class = "interview-name">
+        <h3><%= interview.name %></h3>
+        <% if(currentTime<time){%>
+          <p class = "green"><bold><%= date%></bold></p>
+        <%}else if(currentTime>time){%>
+          <p class = "red"><bold><%= date%></bold></p>
+        <%}else{%>
+          <p class = "yellow"><bold><%= date%></bold></p>
+        <%}%>
+      </div>
+      <div>
+        <% if(currentTime<time){%>
+          <small>Interview will be organised by</small>
+        <%}else if(currentTime>time){%>
+          <small>Interivew organized by</small>
+        <%}else{%>
+          <small>Interview organizing company</small>
+        <%}%>
+        <h4><%= interview.company.name %></h4>
+        <p class="about"> <%=interview.company.about %><p></p> </p>
+      </div>
+      <% if(locals.user){%> 
+        <div class="flext-apart">
+          <span></span> <a class="btn" href="/interview/<%= interview.id %>">Assign results to Students</a>
+        </div>
+      </div>  
+      <%}%>
+  <% }}%>
+
+</div>
+

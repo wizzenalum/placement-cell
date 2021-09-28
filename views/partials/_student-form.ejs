@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/styles/form.css"> 
+<div>
+  <form id = "create-student-form" class = "overlay-form" action="/student/create" method="post">
+    <button class = "btn" type="button" id = "close-form"> close </button> 
+    <div class = "label-field">
+        <lable>Student name</lable>
+        <input name="name" type="text" />
+      </div>
+      <div class="select">
+        <label for="select-batch">Select batch</label>
+        <select id="select-batch" name="batch">
+          <option value="">-------- NONE --------</option>
+          <% if(batchList){for(let batch of batchList){ %>
+            
+            <option value= <%= batch._id %> ><%= batch.name+"  "+"  cap: "+ batch.students.length +"/"+batch.limit %> </option>
+          <%}}%>
+        </select>
+      </div>      
+      <div class = "label-field">
+        <lable>College name</lable>
+        <input name="college" type="text" />
+      </div>
+      <div class="select">
+        <label for="select-status">Select status</label>
+        <select id="select-status" name="status">
+          <option value="Placed">Placed to a company</option>
+          <option value="Not Placed">not placed</option>
+          <option value="Unknown">status is unknown</option>
+        </select>
+      </div>
+      <h2>Courses score</h2>
+      <div>
+        <div class = "label-field">
+          <label for="dsa">Data structure and algorithm</label
+          ><input type="number" max = 100 min = 0 name="dsa" id="dsa" />
+        </div>
+        <div class = "label-field">
+          <label for="web">web development</label
+          ><input type="number" max = 100 min = 0 name="web" id="web" />
+        </div>
+        <div class = "label-field">
+          <label for="react">react course</label
+          ><input type="number" max = 100 min = 0 name="react" id="react" />
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+</div> 

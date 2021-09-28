@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/styles/form.css"> 
+<div>
+  <form id = "create-interview-form" class = "overlay-form" action="/interview/create" method="post">
+    <button class = "btn" type="button" id = "close-form"> close </button> 
+    <div class = "label-field">
+        <lable>interview name</lable>
+        <input name="name" type="text" />
+      </div>
+      <div class="select">
+        <label for="select-batch">Organizing company</label>
+        <select id="select-company" name="company">
+          <option value="">-------- NONE --------</option>
+          <% if(companyList){for(let company of companyList){ %>
+            <option value= <%= company._id %> > <%= company.name %> </option>
+          <%}}%>
+        </select>
+      </div>      
+      <div>
+        <label for="date">Date of Interview</label>
+        <input type="date" name="date">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+</div> 

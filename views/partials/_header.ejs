@@ -1,0 +1,17 @@
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/interviews">Interviews</a>
+    <a href="/current-job">Current Jobs</a>
+    <a href="/csv/all-students">download</a>
+  </nav>
+  <!-- add user actual detatil -->
+ <div class="user">
+    <% if(locals.user)   {%>
+      <a href=""><%= user.name %></a><a href="/employee/signout">sign-out</a>
+    <%}else{%>
+      <a href="/employee/signin">sign-in</a><a href="/employee/signup">sign-up</a>
+    <%}%>
+ </div>  
+ 
+</header>

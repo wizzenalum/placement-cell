@@ -1,0 +1,25 @@
+{
+  "name": "placement-cell",
+  "version": "1.0.0",
+  "description": "application to organise the data of student, interviews, and company and create the csv file",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ghanshyam",
+  "license": "MIT",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.5",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sass": "^1.41.0"
+  }
+}

@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/styles/form.css"> 
+<link rel="stylesheet" href="/styles/lists.css">
+
+<div id="interview">
+  <header>
+      <h2><%= interview.name %></h2>
+      <date>
+
+          <% 
+              let currentTime = new Date().getTime();
+              let date = interview.date.toLocaleDateString();
+              let time = interview.date.getTime();
+              if(currentTime<time){%>
+                <p class = "green"><bold><%= date%></bold></p>
+              <%}else if(currentTime>time){%>
+                <p class = "red"><bold><%= date%></bold></p>
+              <%}else{%>
+                <p class = "yellow"><bold><%= date%></bold></p>
+              <%}%>
+      </date>
+      <div>
+        <% if(currentTime<time){%>
+          <p>Interview will be organised by</p>
+          <%}else if(currentTime>time){%>
+          <p>Interivew organized by</p>
+          <%}else{%>
+          <p>Interview organizing company</p>
+          <%}%>
+          <h3><%= interview.company.name %></h3>
+          <p class="about"><%= interview.company.about %></p>
+      </div>
+  </header>
+
+  <div class = "list student-list">
+    <% if(interview.students){ for(let {student,result} of interview.students){%>
+      <div id = <%= student._id %>>
+        <div class = "student-name-status">
+          <h2><%= student.name %></h2>
+          
+          <% if(!locals.user){%>
+            <% if(student.status ==="Placed"){%>
+            <p class = "green"><bold>Placed</bold></p>
+            <%}else if(student.status ==="Not Placed"){%>
+              <p class = "red"><bold>Not-Placed</bold></p>
+            <%}else{%>
+              <p class = "yellow"><bold>provid data</bold></p>
+            <%}%>
+          <%}else{%>
+            <form action="/student/update/<%=student.id%>" method="post">
+              <% if(student.status ==="Placed"){%>
+                <select class = "green" id="select-status" name="status" onchange="this.form.submit()">
+                  <option value="Placed" selected>Placed</option>
+                  <option value="Not Placed" >Not placed</option>
+                  <option value="Unknown">Unknown</option>
+                <%}else if(student.status ==="Not Placed"){%>
+                <select class = "red" id="select-status" name="status" onchange="this.form.submit()">
+                  <option value="Placed" >Placed</option>
+                  <option value="Not Placed" selected >Not placed</option>
+                  <option value="Unknown">Unknown</option>
+                <%}else{%>
+                  <select class = "yellow" id="select-status" name="status" onchange="this.form.submit()">
+                    <option value="Placed" >Placed</option>
+                    <option value="Not Placed"  >Not placed</option>
+                    <option value="Unknown"selected>Unknown</option>
+                <%}%>
+              </select>
+              <!-- TODO send it on change
+              <button type="submit">change</button > -->
+            </form>
+          <%}%>
+        </div>
+        <div class = "about">
+          <table>
+            <tr>
+              <th>Course </th>
+              <th>-</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td>Data-structure & Algorithm</td>
+              <td>-</td>
+              
+              <td><%= student.dsa %>/100</td>
+            </tr>  
+            <tr>
+              <td>Web-Developement</td>
+              <td>-</td>
+              <td><%= student.web %>/100</td>
+            </tr> 
+            <tr>
+              <td>React & Redux</td>
+              <td>-</td>
+              <td><%= student.react %>/100</td>
+            </tr>           
+          </table>
+        </div>
+        <!-- here creating form that will assign student to interviews -->
+        
+        <% if(locals.user){%>      
+          <form action="/result/update/<%=result.id%>" method="post">
+            <div>
+              <label>Result</label>
+                <% if(result.result ==="Pass"){%>
+                  <select class = "green" id="select-status" name="status" onchange="this.form.submit()">
+                    <option value="Pass" selected>Pass</option>
+                    <option value="Fail" >Fail</option>
+                    <option value="Pending">Pending</option>
+                  <%}else if(result.result ==="Fail"){%>
+                  <select class = "red" id="select-status" name="status" onchange="this.form.submit()">
+                    <option value="Pass" >Pass</option>
+                    <option value="Fail" selected >Fail</option>
+                    <option value="Pending">Pending</option>
+                  <%}else{%>
+                    <select class = "yellow" id="select-status" name="status" onchange="this.form.submit()">
+                      <option value="Pass" >Pass</option>
+                      <option value="Fail"  >Fail</option>
+                      <option value="Pending"selected>Pending</option>
+                  <%}%> 
+              </select>
+
+            </div>
+          </form>
+        <%}%>
+      </div>  
+      <% }}%>
+      
+  </div>
+  
+</div>
