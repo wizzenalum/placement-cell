@@ -1,4 +1,5 @@
 {
+//  for view home and interview-list following code will hide and unhide the 4 forms
     // visibility of the form is managed here.
     const StudentFormBtn = $("#create-student-form");
     const interviewFormBtn = $("#create-interview-form");

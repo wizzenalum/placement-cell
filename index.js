@@ -61,9 +61,8 @@ app.use(passport.setAuthenticatedUser)
 
 // used to see the requests comming to the server TODO: remove in production
 app.use((req, res, next) => {
-  if(req.cookies){
-    console.log("Request for: ", req.cookies);
-  }
+  // this following line will help me to change the color of navigation
+  res.locals.urlPath = req.url;
   console.log("Request for: ", req.url);
   next();
 });
@@ -76,5 +75,7 @@ app.set("views", "./views");
 // server is starts listening
 app.listen(port, (error) => {
   if (error) console.log("server connection ERROR", error);
-  else console.log("SERVER is up and Runing at PORT ", port);
+  else console.log("visit application by",'\x1b[36m"CTL+Click"\x1b[0m');
+  // Second argument is inserted in place of %s
+  console.log('\x1b[33m%s\x1b[0m', `http://localhost:${port}`);  //yellow
 });

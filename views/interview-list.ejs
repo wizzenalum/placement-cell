@@ -1,12 +1,13 @@
 <script src="/scripts/forms-view.js"></script>
 
+<!-- all the forms that will be used to create student interview batch and company -->
 <div id = second-header>
   <button id = "student-create-btn" class="btn">create student</button>
   <button id="interview-create-btn" class="btn">create interview</button>
   <button id="batch-create-btn" class="btn">create batch</button>
   <button id="company-create-btn" class="btn">create company</button>
 </div>
-
+<!-- using partials for different forms to use hare -->
     <%-include("./partials/_student-form") %>
     <%-include("./partials/_interview-form") %>
     <%-include("./partials/_batch-form") %>
@@ -15,6 +16,8 @@
 
 
 <link rel="stylesheet" href="/styles/lists.css">
+
+<!-- creating the list of the interivew -->
 <div class = "list interview-list">
   <% if(interviewList){ let currentTime = new Date().getTime(); 
     for(let interview of interviewList){ 
@@ -47,8 +50,8 @@
         <div class="flext-apart">
           <span></span> <a class="btn" href="/interview/<%= interview.id %>">Assign results to Students</a>
         </div>
+        <%}%>
       </div>  
-      <%}%>
   <% }}%>
 
 </div>

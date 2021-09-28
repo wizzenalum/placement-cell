@@ -28,7 +28,7 @@
 .student-list .about, .interview-list .about {
   padding: 0px;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0 0 20px 20px;

@@ -2,9 +2,10 @@ const { Student, Company } = require("../models");
 const { company } = require("./company");
 const fs = require('fs');
 
-
+// action function to create csv files and responsing with that
 module.exports.allStudent = async function (req, res) {
   try {
+    // fetching the data from the data base server
     const students = await Student.find({})
     .populate({
                 path:'interview',
@@ -23,6 +24,8 @@ module.exports.allStudent = async function (req, res) {
                   }
                 ]}]
               }).populate('batch');
+
+      // creating the csv file data here only 
     let serialNumber = 1, entry = "";
     let fileData = "S.No,name,batch,college,status,dsa,web,react,interview,interview Date,company,result"
     for(let student of students){
@@ -44,7 +47,8 @@ module.exports.allStudent = async function (req, res) {
         }
       }
     }
-    console.log(fileData)
+    // console.log(fileData)
+    // creting the file on the machine
     const file = fs.writeFile('assets/data.csv',fileData,(err,data)=>{
       if(err){
         console.log(err);
@@ -53,13 +57,15 @@ module.exports.allStudent = async function (req, res) {
       return res.download('assets/data.csv');
     });
   } catch (err) {
-    console.log(err,0000);
+    console.log(err);
   }
 };
 
+// dumy action to create the csv file for only for single interview
 module.exports.interview = function (req, res) {
   return res.end(`for a interview ${req.params.id}`, {});
 };
+// dummy action to create csv for a batch only
 module.exports.batch = function (req, res) {
   return res.end(`for a batch  ${req.params.id}`, {});
 };

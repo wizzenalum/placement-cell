@@ -1,13 +1,14 @@
+<!-- form to create batch -->
 <form id = "create-batch-form" class = "overlay-form" action="/batch/create" method="post">
   <button class = "btn" type="button" id = "close-form"> close </button> 
  
   <div>
-    <lable>Enter your name</lable>
-    <input name="name" type="text" />
+    <lable>Enter batch name</lable>
+    <input name="name" type="text" required />
   </div>
   <div>
-    <label for="limit">max student in this batch</label>
-    <input type="number" name="limit" id="limit" />
+    <label for="limit">max student in the batch</label>
+    <input required type="number" name="limit" id="limit" />
   </div>
   <button type="submit">Submit</button>
 </form>

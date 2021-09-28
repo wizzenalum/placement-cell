@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/styles/form.css"> 
 <link rel="stylesheet" href="/styles/lists.css">
-
+<!-- this is view for specific interiviews so that employeee can change result and statu of students -->
 <div id="interview">
+  <!-- header includes interview name and date with company name and about the company -->
   <header>
       <h2><%= interview.name %></h2>
-      <date>
-
+      <div>
           <% 
               let currentTime = new Date().getTime();
               let date = interview.date.toLocaleDateString();
@@ -17,7 +17,7 @@
               <%}else{%>
                 <p class = "yellow"><bold><%= date%></bold></p>
               <%}%>
-      </date>
+      </div>
       <div>
         <% if(currentTime<time){%>
           <p>Interview will be organised by</p>
@@ -30,7 +30,7 @@
           <p class="about"><%= interview.company.about %></p>
       </div>
   </header>
-
+  <!-- this is also a list of students with the form for changing result and updating the status. -->
   <div class = "list student-list">
     <% if(interview.students){ for(let {student,result} of interview.students){%>
       <div id = <%= student._id %>>
@@ -94,7 +94,7 @@
             </tr>           
           </table>
         </div>
-        <!-- here creating form that will assign student to interviews -->
+        <!-- here creating form that change the result of the students.-->
         
         <% if(locals.user){%>      
           <form action="/result/update/<%=result.id%>" method="post">

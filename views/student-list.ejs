@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/styles/lists.css">
-
+<!-- student lists for home page and interview page created here  -->
 <div class = "list student-list">
   <% if(studentList){ for(let student of studentList){%>
     <div id = <%= student._id %>>
       <div class = "student-name-status">
         <h2><%= student.name %></h2>
-        
+        <!-- if user is authenticated then we will show the controls to update the student status else he/she can only read -->
         <% if(!locals.user){%>
           <% if(student.status ==="Placed"){%>
           <p class = "green"><bold>Placed</bold></p>
@@ -33,11 +33,11 @@
                   <option value="Unknown"selected>Unknown</option>
               <%}%>
             </select>
-            <!-- TODO send it on change
-            <button type="submit">change</button > -->
           </form>
         <%}%>
+
       </div>
+      <!-- this class includes the educational details of the student -->
       <div class = "about">
         <table>
           <tr>
@@ -84,8 +84,6 @@
             <%}}%>
           </select>
           <input type="hidden" name="studentId"value=<%=student.id%>>
-          <!-- TODO do it on change -->
-          <!-- <button type="submit">assign</button > -->
         </form>
       <%}%>
     </div>  

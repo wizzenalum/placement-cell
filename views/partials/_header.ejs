@@ -1,9 +1,10 @@
 <header>
   <nav>
-    <a href="/">Home</a>
-    <a href="/interviews">Interviews</a>
-    <a href="/current-job">Current Jobs</a>
-    <a href="/csv/all-students">download</a>
+    <!-- here i am changing the removing the dead link on which i am currently. -->
+    <% if(locals.urlPath!=="/"){%> <a href="/">Home</a> <%}%>
+    <% if(locals.urlPath!=="/interviews"){%> <a href="/interviews">Interviews</a> <%}%>
+    <% if(locals.urlPath!=="/current-job"){%> <a href="/current-job">Current Jobs</a> <%}%>
+    <% if(locals.urlPath==="/interviews" ||locals.urlPath==="/" ){%> <a href="/csv/all-students">download</a><%}%>
   </nav>
   <!-- add user actual detatil -->
  <div class="user">

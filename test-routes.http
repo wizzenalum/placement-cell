@@ -3,7 +3,7 @@
 GET http://localhost:8000/ HTTP/1.1
 ###
 GET http://localhost:8000/interviews HTTP/1.1
-###
+###  *** DEAD LINK ***
 GET http://localhost:8000/current-job HTTP/1.1
 
 
@@ -14,9 +14,9 @@ GET http://localhost:8000/current-job HTTP/1.1
 # ********* ******  CSV DOWNLOADS ***************
 ###
 GET http://localhost:8000/csv/all-students HTTP/1.1
-###  NOTICE:update id each time 
+###  NOTICE:update id each time *** DEAD LINK ***
 GET http://localhost:8000/csv/interview/55333 HTTP/1.1
-###  NOTICE:update id each time
+###  NOTICE:update id each time  *** DEAD LINK ***
 GET http://localhost:8000/csv/batch/1234 HTTP/1.1
 
 
@@ -42,7 +42,7 @@ Content-Type: application/x-www-form-urlencoded
 
 status=Placed
 &interview=4464565
-### NOTICE: update the body data
+### NOTICE: update the body data  *** DEAD LINK ***
 GET http://localhost:8000/student/delete/566549 HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
@@ -109,7 +109,7 @@ result=PASS
 
 
 ### **************** BATCH ****** 
-###NOTICE:update id each time
+###NOTICE:update id each time *** DEAD LINK ***
 GET http://localhost:8000/batch/id/1234 HTTP/1.1
 ###NOTICE:update body data
 POST http://localhost:8000/batch/create HTTP/1.1
@@ -124,7 +124,7 @@ name=param
 
 
 #******************** COMPANY  ********
-### NOTICE:update id each time
+### NOTICE:update id each time *** DEAD LINK ***
 GET http://localhost:8000/company/id/1234 HTTP/1.1
 ###NOTICE:update body data
 POST http://localhost:8000/company/create HTTP/1.1

@@ -1,7 +1,10 @@
-
 const {Employee} = require('../models');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
+// using basic authentication here. cookie based seesion criation
+
+// following function will create the sessions.
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -22,10 +25,12 @@ passport.use(new LocalStrategy({
     }
   ));
 
+// serialize the data when it set to cookkie.
   passport.serializeUser(function(employee, done) {
     done(null, employee._id);
   });
   
+// deserialize id for every request.
   passport.deserializeUser(function(id, done) {
     Employee.findById(id, function(err, employee) {
       if(err){
@@ -35,6 +40,8 @@ passport.use(new LocalStrategy({
       return done(null, employee);
     });
   });
+
+  // i will use this middleware to check authenticity 
   passport.setAuthenticatedUser = function(req,res,next){
     if(req.isAuthenticated()){
         // request. user conatains the current signed in user from the session cokies we have just send to the views

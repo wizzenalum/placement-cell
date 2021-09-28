@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// creating the schema
 const batchSchema = new Schema(
   {
     name: String,
@@ -21,6 +22,7 @@ const batchSchema = new Schema(
 batchSchema.virtual("isBatchFull").get(function () {
   return this.limit < this.students.length;
 });
+// creating model from the schema
 
 const Batch = model("Batch", batchSchema);
 module.exports = Batch;

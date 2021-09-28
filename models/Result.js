@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+// creating the schema
 
 const resultSchema = Schema(
   {
@@ -23,5 +24,8 @@ const resultSchema = Schema(
     timestamps: true,
   }
 );
+
+// creating model from the schema
+
 const Result = model("Result", resultSchema);
 module.exports = Result;

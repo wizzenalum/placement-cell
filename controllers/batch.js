@@ -1,5 +1,6 @@
 const { Batch } = require("../models");
 
+// dummy function to read the batch
 module.exports.batch = function (req, res) {
   return res.end("<h1>bathc to read</h1>" + `${req.params.id}`, {});
 };

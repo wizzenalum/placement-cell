@@ -1,6 +1,3 @@
 S.No,name,batch,college,status,dsa,web,react,interview,interview Date,company,result
-1,rakesh,2020,hera lal,Placed,45,54,87,honda/1,Tue Sep 14 2021,honda,Pass
-1,rakesh,2020,hera lal,Placed,45,54,87,honda/1,Tue Sep 14 2021,honda,Pass,interviewizzen,Sun Oct 10 2021,wizzenalum,Pending
-3,rake,2020,meena kusamkd.kjl,Unknown,35,35,35,honda/1,Tue Sep 14 2021,honda,Fail
-4,hell boy,2020,rashtiriya k,Placed,58,54,58,interviewizzen,Sun Oct 10 2021,wizzenalum,Pending
-5,harry,2020,rohan,Placed,66,88,77,interviewizzen,Sun Oct 10 2021,wizzenalum,Pending
+1,raj,b-1,rajeshvary,Not Placed,58,58,58,iv-101-dec,Wed Dec 01 2021,wizzenalum,Fail
+2,kumari komal ,b-1,hello kumar shik,Placed,99,66,26,iv-102,Wed Sep 01 2021,wizzenalum,Pass

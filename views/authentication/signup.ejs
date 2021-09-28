@@ -1,21 +1,22 @@
+ <!-- form to create signup -->
 <link rel="stylesheet" href="/styles/form.css"> 
 <div>
   <form id = "signup-form" action="/employee/create-user" method="post">
     <div class = "label-field">
-        <lable>employee name</lable>
-        <input name="name" type="text" />
+        <lable>Employee name</lable>
+        <input name="name" required type="text" />
     </div>
     <div class = "label-field">
-        <lable>email</lable>
-        <input name="email" type="email" />
+        <lable>Email</lable>
+        <input name="email" required type="email" />
     </div>
     <div class = "label-field">
-        <lable>password</lable>
-        <input name="password" type="password" />
+        <lable>Password</lable>
+        <input name="password" required type="password" />
     </div>
     <div class = "label-field">
         <lable>Confirm password</lable>
-        <input name="confirmPassword" type="password" />
+        <input name="confirmPassword" required type="password" />
     </div>
     <button type="submit">Submit</button>
     </form>

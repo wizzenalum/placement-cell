@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// creating the schema
 const companySchema = Schema(
   {
     name: { type: String, required: true },
@@ -15,5 +16,7 @@ const companySchema = Schema(
     timestamps: true,
   }
 );
+// creating model from the schema
+
 const Company = model("Company", companySchema);
 module.exports = Company;

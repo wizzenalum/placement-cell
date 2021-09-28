@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// creating the schema
 const studentSchema = Schema(
   {
     name: {
@@ -45,6 +46,6 @@ const studentSchema = Schema(
     timestamps: true,
   }
 );
-
+// creating model from the schema
 const Student = model("Student", studentSchema);
 module.exports = Student;

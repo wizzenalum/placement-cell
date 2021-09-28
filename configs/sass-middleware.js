@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const sass = require("sass");
+// this  function for converting the directory of scss file to a directoory of css file
 
 module.exports = function scssToCss(src, dest) {
   return function (req, res, next) {

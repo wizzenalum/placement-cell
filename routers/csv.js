@@ -10,7 +10,7 @@ const csvController = require("../controllers/csv");
 
 // these are main three pages that will mostly user will use.
 router.get("/all-students", csvController.allStudent);
-router.get("/interview/:id", csvController.interview);
-router.get("/batch/:id", csvController.batch);
+router.get("/interview/:id", csvController.interview); //not active TODO
+router.get("/batch/:id", csvController.batch); // not active TODO
 
 module.exports = router;
