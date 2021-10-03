@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // here we connect the odm(object document maper) mongoose to the dbms mongodb.
-mongoose.connect("mongodb://localhost/placement-cell", {
+mongoose.connect("mongodb+srv://placement-cell-user:placement-cell-password@placement-cell-0.ijq4c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

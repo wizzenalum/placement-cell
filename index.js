@@ -27,8 +27,8 @@ app.set("layout extractStyles", true);
 app.use(express.static("assets")); // setup the
 
 // my own scss middleware to write the files to css folder if any.
-const dartScssMiddleware = require("./configs/sass-middleware");
-app.use(dartScssMiddleware("assets/scss", "assets/styles"));
+// const dartScssMiddleware = require("./configs/sass-middleware");
+// app.use(dartScssMiddleware("assets/scss", "assets/styles"));
 
 // configure the express-session library to read and write to cookies.
 // adding middle ware for the sessions
@@ -43,7 +43,7 @@ app.use(session({
   },
   store: MongoStore.create(
       {
-          mongoUrl:'mongodb://localhost/placement-cell',
+          mongoUrl:'mongodb+srv://placement-cell-user:placement-cell-password@placement-cell-0.ijq4c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
           autoRemove:'disabled'
       },
       function(err){
