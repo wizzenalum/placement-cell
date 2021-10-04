@@ -43,7 +43,7 @@ app.use(session({
   },
   store: MongoStore.create(
       {
-          mongoUrl:'mongodb+srv://placement-cell-user:placement-cell-password@placement-cell-0.ijq4c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+          mongoUrl:'mongodb://localhost/placement-cell',
           autoRemove:'disabled'
       },
       function(err){
