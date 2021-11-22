@@ -1,7 +1,7 @@
 # Placement cell 
 This is an application that can be used by a placement department which handles the interviews of multiplae student in batches and taken by a company.
 
-[Video](youtube.com/wizzenalum) to show demo and setup. 
+[Video](youtube.com/wizzenalum) to show [demo](https://placement-cell-application.herokuapp.com/) and setup. 
 
 ## How to setup on local machine
 To use this repository your machine should have [node](https://nodejs.org/en/), npm, [monogodb](https://docs.mongodb.com/manual/installation/) and [git](https://git-scm.com/downloads). 
